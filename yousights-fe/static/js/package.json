@@ -1,0 +1,23 @@
+{
+  "name": "Abracadata_Latest",
+  "version": "1.0.0",
+  "description": "Abracadata project repo",
+  "main": ".eslintrc.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "lint": "eslint frontend/static/js/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ucd-nlmsc-teamproject/Abracadata-Repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ucd-nlmsc-teamproject/Abracadata-Repo/issues"
+  },
+  "homepage": "https://github.com/ucd-nlmsc-teamproject/Abracadata-Repo#readme"
+}

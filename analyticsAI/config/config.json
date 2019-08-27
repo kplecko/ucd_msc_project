@@ -1,0 +1,7 @@
+{
+    "BasicAuthCredentials": "xxxx",
+    "YoutubeDataAPI": "/api/v1.0/youtube_concurrent_search",
+    "google_sentiment_key": "xxxx",
+    "google_sentiment_url": "https://language.googleapis.com/v1/documents:analyzeSentiment",
+    "google_entity_url": "https://language.googleapis.com/v1/documents:analyzeEntities"
+}

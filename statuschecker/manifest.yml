@@ -1,0 +1,7 @@
+---
+applications:
+ - name: appstatus
+   routes:
+    - route: appstatus.eu-gb.mybluemix.net
+   memory: 256M
+   

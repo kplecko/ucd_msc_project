@@ -1,0 +1,57 @@
+API(s) described in this file:
+<1> user_search_statistics_fetching
+
+
+
+
+<1> user_search_statistics_fetching:
+
+
+
+Description:
+Fetch user search statistics.
+
+
+
+Input format:
+{
+    "params": {
+        "user_search_type": string,
+        "statistics_mode": string
+    }
+}
+
+params.user_search_type: Specify what type(s) of user searches are included in the statistics.
+                         Choose from one of the following values:
+                         "live": real time searches
+                         "cached": stored data searches
+                         "any": real time searches and stored data searches
+params.statistics_mode: Specify the mode of the statistics.
+                        Choose from one of the following values:
+                        "smart": For the query terms, the leading and trailing whitespace characters (if any) are removed, and are then made lower-case,
+                                 so that, for example, "Python", "python" and "Python " are treated as the same query term.
+                                 This is the recommended value.
+                        "strict": The query terms are not changed,
+                                  so that, for example, "Python", "python" and "Python " are treated as different query terms.
+
+
+
+Output format when the operation is successful:
+{
+    "total_count": integer,
+    "statistics_per_query": [(list)
+        {
+            "query": string,
+            "count": integer,
+            "ratio": number
+        }
+    ]
+}
+
+total_count: The count of all the searches covered in the statistics.
+statistics_per_query: Statistics for query terms, sorted on the query term search counts from the largest to the smallest
+statistics_per_query[?]: Statistics for a query term
+statistics_per_query[?].query: The query term
+statistics_per_query[?].count: The search counts of this query term
+statistics_per_query[?].ratio: The search ratio of this query term,
+                               that is, the search counts of this query term divided by total_count

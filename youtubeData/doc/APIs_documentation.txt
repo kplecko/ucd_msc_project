@@ -1,0 +1,125 @@
+APIs:
+<1> youtube_concurrent_search
+<2> youtube_database_update
+
+Currently, there may be also some other API. But you should only use these two APIs.
+
+
+
+
+<1> API youtube_concurrent_search
+
+
+
+Description:
+Search for YouTube videos and get their information, including their transcripts.
+This API does this task from YouTube directly (not from the database), and in a multithreading way.
+
+
+
+Input format:
+{
+    params:{
+        "query": string,
+        "order": string,
+        "results_max_count": integer,
+        "want_descriptions:": boolean,
+        "want_en_transcripts": boolean,
+        "want_comments": boolean
+    }
+}
+
+params.query: The query term to search for
+params.order: Specifies the method that will be used to sort search results.
+              Choose one from the following:
+              "date": Videos are sorted in reverse chronological order based on the date they were created.
+              "rating": Videos are sorted from highest to lowest rating.
+              "relevance": Videos are sorted based on their relevance to the search query. This is the recommended value.
+              "title": Videos are sorted alphabetically by title.
+              "viewCount": Videos are sorted from highest to lowest number of views. For live broadcasts, videos are sorted by number of concurrent viewers while the broadcasts are ongoing.
+params.results_max_count: This integer specifies the maximum count of results that may be returned, and must be in [0, 50].
+params.want_descriptions: Whether descriptions of videos should be returned
+params.want_en_transcripts: Whether English transcripts of videos should be returned
+params.want_comments: Whether some (at most 100, not necessarily all) comments of videos should be returned
+
+
+
+Output format when the operation is successful:
+{
+    "video_results_count": integer,
+    "video_results": [(list)
+        {
+            "video_id": string,
+            "data": {
+                "title": string,
+                "likeCount": integer,
+                "dislikeCount": integer,
+                "viewCount": integer,
+                "description": absent or string,
+                "en_transcript": absent or list,
+                "some_comments": absent or {
+                    "comment_results_count": integer,
+                    "comment_results": [(list)
+                        string
+                    ],
+                    "comment_results_more_info": [(list)
+                        {
+                            "likeCount": integer
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
+
+video_results_count: The count of the video results that are actually returned. This may be less than results_max_count of the input params.
+video_results: A list containing the video results
+video_results[?].video_id: The ID that YouTube uses to identify the video.
+video_results[?].data: Some information about the video.
+video_results[?].data.title: The title of the video result.
+video_results[?].data.likeCount: The number of users who have indicated that they liked the video.
+video_results[?].data.dislikeCount: The number of users who have indicated that they disliked the video.
+video_results[?].data.viewCount: The number of times the video has been viewed.
+video_results[?].data.description: Absent if want_descriptions of the input params is false, otherwise
+                                   the video's description.
+video_results[?].data.en_transcript: Absent if want_en_transcripts of the input params is false, otherwise
+                                     the English transcript of the video with the structure described at https://pypi.org/project/youtube-transcript-api/
+video_results[?].data.some_comments: Absent if want_comments of the input params is false, otherwise
+                                     some (not necessarily all) comments of the video.
+video_results[?].data.some_comments.comment_results_count: The count of the comments that are returned.
+video_results[?].data.some_comments.comment_results: The comments that are returned.
+video_results[?].data.some_comments.comment_results[?]: The comment.
+video_results[?].data.some_comments.comment_results_more_info: Some information about the comments that are returned.
+video_results[?].data.some_comments.comment_results_more_info[?]: Some information about the corresponding (with the same index) comment.
+video_results[?].data.some_comments.comment_results_more_info[?].likeCount: The total number of likes (positive ratings) the comment has received.
+
+
+
+
+<2> API youtube_database_update
+
+
+
+Description:
+Get information from YouTube directly, and then update the data about YouTube videos in the database.
+
+
+
+Input format:
+{
+    "params":{
+        "each_max_count": integer
+    }
+}
+
+params.each_max_count: This integer specifies the maximum count of videos that each topic can have, and must be in [0, 50].
+
+
+
+Output format when the operation is successful:
+{
+    "result": string
+}
+
+result: The string "success"

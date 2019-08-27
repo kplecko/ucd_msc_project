@@ -1,0 +1,81 @@
+The database is a MongoDB database.
+
+All the data is stored in the "yousights" database.
+
+
+
+1. The collection containing the information about the topics themselves
+
+The information about the topics themselves is stored in the "topics" collection.
+
+In this collection, each document represents a topic, and has the following structure:
+{
+    "name": string,
+    "name_in_db": string,
+    "real_time_query": string,
+    "all_matcher": string,
+    ...
+}
+
+The detailed description of the above document structure is the following:
+name: The name of this topic. Different topics have different names.
+name_in_db: This string determines the name of this topic's collection(s) in the database.
+            Each topic has a "topic video original information collection", of which the name is "topicVideosOriginal_" followed by this string.
+real_time_query: This string specifies the query term to search for when updating the topic video original information collection of this topic.
+all_matcher: The string "a".
+             You can use the condition that the value of this field is equal to the string "a" to query for all the documents in the collection.
+...: The document may have more fields, such as "_id", but you are unlikely to need to use them.
+
+
+
+2. The topic video original information collections
+
+In each topic video original information collection, each document represents a YouTube video, and contains information got directly from YouTube.
+
+The structure of each such document is the following:
+{
+    "item_index": integer,
+    "video_id": string,
+    "all_matcher": string,
+    "data_title": string,
+    "data_likeCount": integer,
+    "data_dislikeCount": integer,
+    "data_viewCount": integer,
+    "data_description": string,
+    "data_en_transcript": list,
+    "data_some_comments": {
+        "comment_results_count": integer,
+        "comment_results": [(list)
+            string
+        ],
+        "comment_results_more_info": [(list)
+            {
+                "likeCount": integer
+            }
+        ]
+    },
+    ...
+}
+
+The detailed description of the above document structure is the following:
+item_index: The index of the video. Conceptually, the data of each topic is a list. But documents in a collection do not have order.
+            Therefore, the index of the video in the conceptual list needs to be recorded in the document.
+            Currently, the order is the original order got from the YouTube API.
+            If there is at least one document in the collection, then the minimum index is 0 and the maximum index is the count of all the documents in the collection minus 1.
+video_id: The ID that YouTube uses to identify the video.
+all_matcher: The string "a".
+             You can use the condition that the value of this field is equal to the string "a" to query for all the documents in the collection.
+data_title: The title of the video result.
+data_likeCount: The number of users who have indicated that they liked the video.
+data_dislikeCount: The number of users who have indicated that they disliked the video.
+data_viewCount: The number of times the video has been viewed.
+data_description: The video's description.
+data_en_transcript: The English transcript of the video with the structure described at https://pypi.org/project/youtube-transcript-api/
+data_some_comments: Some (not necessarily all) comments of the video.
+data_some_comments.comment_results_count: The count of these comments.
+data_some_comments.comment_results: These comments.
+data_some_comments.comment_results[?]: The comment.
+data_some_comments.comment_results_more_info: Some information about these comments.
+data_some_comments.comment_results_more_info[?]: Some information about the corresponding (with the same index) comment.
+data_some_comments.comment_results_more_info[?].likeCount: The total number of likes (positive ratings) the comment has received.
+...: The document may have more fields, such as "_id", but you are unlikely to need to use them.

@@ -1,0 +1,8 @@
+---
+applications:
+ - name: yousight
+   routes:
+    - route: yousight.eu-gb.mybluemix.net
+    - route: yousight.net
+   memory: 256M
+   

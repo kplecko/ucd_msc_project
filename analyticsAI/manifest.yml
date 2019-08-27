@@ -1,0 +1,6 @@
+---
+applications:
+ - name: analyticsai
+   routes:
+    - route: analyticsai.eu-gb.mybluemix.net
+   memory: 3GB

@@ -1,0 +1,1 @@
+web: python server.py --auto_update_data

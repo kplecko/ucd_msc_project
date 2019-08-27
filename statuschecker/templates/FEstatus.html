@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+   <body>
+   {% if result[0] == True %}
+   <p>Main service is working</p>
+        <div class="box" style="width:50px;height:30px;background:#0f0;"></div>
+   {% else %}
+        <p>Main service is disconnected!!!</p>
+        <div class="box" style="width:50px;height:30px;background:#f00;"></div>
+   {% endif %}
+
+   {% if result[1] == True %}
+   <p>Analytics service is working</p>
+        <div class="box" style="width:50px;height:30px;background:#0f0;"></div>
+   {% else %}
+        <p>Analytics service is disconnected!!!</p>
+        <div class="box" style="width:50px;height:30px;background:#f00;"></div>
+   {% endif %}
+
+   {% if result[2] == True %}
+   <p>Youtube data service is working</p>
+        <div class="box" style="width:50px;height:30px;background:#0f0;"></div>
+   {% else %}
+        <p>Youtube data service is disconnected!!!</p>
+        <div class="box" style="width:50px;height:30px;background:#f00;"></div>
+   {% endif %}
+   </body>
+</html>

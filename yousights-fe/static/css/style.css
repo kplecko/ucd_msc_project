@@ -1,0 +1,225 @@
+/* All page has height and width 100%, and font-family with 3 options. */
+body,html{
+    height: 100%;
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, SansSerif;
+}
+
+/* IMAGE - Reduce the size. */
+.image {
+    height: 50;
+    width: 50;
+}
+
+/* SEARCH BAR - Sizing. */
+.input-group {
+    width: 600px;
+}
+
+.imgtext{
+    padding-left: 350px;
+}
+
+/* SEARCH BAR - Sizing border. */
+.rounded-pill {
+    border-radius: 40px;
+}
+
+/* SEARCH BAR - Sizing of button search. */
+.input-group-append {
+    margin-left: -1px;
+    margin-top: -1px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+/* BUTTONS - Make the color of the text and border */
+.btn-outline-default {
+    border: 2px solid #00adb5;
+    color: #00adb5;
+}
+
+/* BUTTONS -  Make border rounded */
+.btn-rounded {
+    border-radius: 10em;
+}
+
+/* BUTTONS - Change the color of background and text when button is hover */
+.btn-outline-default:hover{
+    background-color: #00adb5;
+    color: white;
+}
+
+/* PILLS - not active */
+.nav-pills .pill-1 .nav-link:not(.active) {
+    background-color: white;
+    color: #00adb5;
+}
+
+.nav-pills .pill-2 .nav-link:not(.active) {
+    background-color: white;
+    color: #00adb5;
+}
+
+.nav-pills .pill-3 .nav-link:not(.active) {
+    background-color: white;
+    color: #00adb5;
+}
+
+/* PILLS - active (faded) */
+.nav-pills .pill-1 .nav-link {
+    background-color: #00adb5;
+    color: white;
+}
+
+.nav-pills .pill-2 .nav-link {
+    background-color: #00adb5;
+    color: white;
+}
+
+.nav-pills .pill-3 .nav-link {
+    background-color: #00adb5;
+    color: white;
+}
+
+/* CARDS - spacing and size. */
+.card {
+    max-width: 350%;
+    margin-left: 1%;
+    margin-bottom: 2%;
+}
+
+/* CARDS - spacing and size. */
+.card-text {
+    font-size: 0.94em;
+}
+
+/* CARDS - spacing and size. */
+.card-deck {
+    margin-left: 11%;
+}
+
+/* TITLE - position the titles of circular progress bar. */
+.likes {
+    position: absolute;
+    top: 20px;
+    left: 80px;
+}
+
+/* TITLE - position the titles of circular progress bar. */
+.relevance {
+    position: absolute;
+    top: 165px;
+    left: 57px;
+}
+
+/* MAP - Sizing. */
+.map {
+  width: 900px;
+}
+
+#slogan {
+    font-size: 1.2em;
+}
+.modal-xl {
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  .row{
+    padding-bottom: 10px;
+    border-color: black;
+  }
+
+  .border{
+    border-width:3px !important;
+}
+.loading-indicator {
+    height: 100px;
+    background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url( 'https://i.imgur.com/KUJoe.gif' );
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: fixed;
+    padding-left: 700px;
+    padding-top: 270px;
+    width:100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(255,255,255,0.7);
+    z-index:9999;
+    display:none;
+  }
+
+.loading-indicator-overlay {
+    background-position: center center;
+    opacity: 1.0;
+    filter: alpha(opacity = 100);
+  }
+  
+  .popup-overlay {
+    /*Hides pop-up when there is no "active" class*/
+    visibility: hidden;
+    position: absolute;
+    background: #ffffff;
+    border: 3px solid #666666;
+    width: 50%;
+    height: 50%;
+    left: 25%;
+  }
+  
+  .popup-overlay.active {
+    /*displays pop-up when "active" class is present*/
+    visibility: visible;
+    text-align: center;
+  }
+  .popup-content {
+    /*Hides pop-up content when there is no "active" class */
+    visibility: hidden;
+  }
+  
+  .popup-content.active {
+    /*Shows pop-up content when "active" class is present */
+    visibility: visible;
+  }
+  
+  button {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 30px;
+    margin: .20rem;
+    font-size: 1rem;
+    color: #666666;
+    background: #ffffff;
+    border: 1px solid #666666;
+  }
+  button:hover {
+    border: 1px solid #666666;
+    background: #666666;
+    color: #ffffff;
+  }
+
+  #feedback {
+	float: left;
+	position: fixed;
+	top: calc(50% - 47px);
+	right: 0;
+}
+
+#feedback a {
+	background: #FF4500;
+	border-radius: 5px 0 0 5px;
+	box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+	border: 3px solid #fff;
+	border-right: 0;
+	display: block;
+	padding: 20px 12px;
+	transition: all .2s ease-in-out;
+}
+
+#feedback a:hover {
+	padding-right: 20px;
+}
+
+.navbar { padding-top: 0rem; padding-bottom: 0rem; }
+
+.logoAlign{padding-top: 5rem;}

@@ -1,0 +1,6 @@
+---
+applications:
+ - name: eventsyousights
+   routes:
+    - route: eventsyousights.eu-gb.mybluemix.net
+   memory: 128M

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- Required meta tag for bootstrap (responsive). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Define a description of the web page. -->
+    <meta name="description" content="video-analyzes">
+
+    <!-- Define the author of a page. -->
+    <meta name="author" content="">
+
+    <!-- Load the reset file, with this is guarantee the page will run correctly at different browsers. -->
+    <link rel="stylesheet" href="css/reset.css">
+
+    <!-- Load the bootstrap file, for changes using the library bootstrap. -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/loading-bar.css"/>
+
+    <!-- Load the css file, with style changes for the document. -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Load the circle.css in the document for circular progress bar. -->
+    <link rel="stylesheet" href="css/circle.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqcloud/1.0.4/jqcloud.css"
+          integrity="sha256-0wHfvamjIOOOniR1o5N3nrQn8Hv/ztxC+gkrb9AuZ5M=" crossorigin="anonymous"/>
+
+    <!-- importing Google fonts for the tag-line-->
+    <link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Tittle of the web page. -->
+    <title>YouSights</title>
+    
+</head>
+
+<body>
+<header>
+    <div id="mainMenu">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark primary-color text-right">
+            <ul class="navbar-nav my-2 my-lg-0 ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aboutPage.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="help.html">Help</a>
+              </li>
+            </ul>
+        </nav>
+
+        <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Please help in providing the feedback</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <button id="veryhappy" style='font-size:72px;'>&#128522;</button>
+                            <button id="happy" style='font-size:72px;'>&#128578;</button>
+                            <button id="average" style='font-size:72px;'>&#128533;</button>
+                            <button id="sad" style='font-size:72px;'>&#128545;</button>
+                        </div>
+                        <div class="row">
+                            <p class="col-sm-3 text-center ml-auto">Very Happy</p>
+                            <p class="col-sm-3 text-center ml-auto">Happy</p>
+                            <p class="col-sm-3 text-center ml-auto">Average</p>
+                            <p class="col-sm-3 text-center ml-auto">Sad</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <div id="feedback" style="display: none;">
+                    <a href="#" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+                        Feedback
+                    </a>
+                </div>
+    <!-- Load logo to the file, with margin left and right sides automatic, and margin top. -->
+    <div id="oldmain" class="row logoAlign">
+        <div class="col-sm-12 text-center">
+            <a href="index.html">
+                <img class="image" id="logoId" src="images/YouSights_logo.svg"/>
+            </a>
+        </div>
+    </div>
+    <div class="imgtext">
+    <div class="row" id="justLogo" style="display: none">
+        <a href="index.html">
+            <img class="float-left" src="images/YouSightslogosmall.svg" width="100" height="100"/>
+        </a>
+        <form id="searchForm" class="input-group mb-3">  
+            <!-- Rounded format, shadow and padding for the search bar. -->
+            <input class="form-control py-3 border-right-0 border rounded-pill" type="search"
+                   id="textBoxId">
+            <!-- Include button search with style rounded border. -->
+            <span class="input-group-append">
+                <button class="btn btn-outline-secondary py-0 border-left-0 border rounded-pill shadow-lg" id="searchButtonId" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+              </span>
+        </form>
+    </div> 
+    </div>   
+       
+    <div class="container">
+        <!-- Search bar with margins. -->
+        <form id="searchForm" class="input-group mx-auto mb-3">  
+            <!-- Rounded format, shadow and padding for the search bar. -->
+            <input class="form-control py-3 border-right-0 border rounded-pill" type="search"
+                   id="textBoxId">
+            <!-- Include button search with style rounded border. -->
+            <span class="input-group-append">
+                <button class="btn btn-outline-secondary py-0 border-left-0 border rounded-pill shadow-lg" id="searchButtonId" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+              </span>
+        </form>
+
+        <!-- Make the wrap for buttons under the search bar with margin and padding. -->
+        <nav id='toolbar' class="d-flex justify-content-center">
+            <button id="python" type="button" class="btn btn-outline-info btn-rounded waves-effect mx-1">Python</button>
+            <button id="java" type="button" class="btn btn-outline-info btn-rounded waves-effect mx-1">Java</button>
+            <button id="cassandra" type="button" class="btn btn-outline-info btn-rounded waves-effect mx-1">Cassandra</button>
+            <button id="hadoop" type="button" class="btn btn-outline-info btn-rounded waves-effect mx-1">Hadoop</button>
+            <button id="fsharp" type="button" class="btn btn-outline-info btn-rounded waves-effect mx-1">F#</button>
+            <button id="rProgramming" type="button" class="btn btn-outline-info btn-rounded waves-effect mx-1">R Programming</button>
+        </nav>
+    </div>
+</div>
+</header>
+<div class="tab-pane fade"  id="errorPanel" role="tabpanel" aria-labelledby="pills-events-tab" style="display: none">
+        <div class="tab-pane fade show active" id="pills-error-panel" role="tabpanel" aria-labelledby="pills-video-tab">
+            <div id="errorContainer" class="container">
+                <div class="card">
+                    <!-- One row to display picture and title of the video, word-cloud and circular progress bar. -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Make the section wrap to display the details when one pill is selected. -->
+<div id="content">
+<section id="sectionId">
+     <!-- Make the navigation wrap for pills buttons under the group of buttons. -->
+     <nav class="navbarVal">
+            <!-- Navigation table pills with margin and centered. -->
+            <ul id="pills-tab" class="nav nav-pills mb-5 justify-content-center" role="tablist">
+                <!-- Navigation item(pills) for videos. -->
+                <li class="nav-item pill-1">
+                    <!-- That pill will be selected when page is load. -->
+                    <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab"
+                       aria-controls="pills-video" aria-selected="true">Video</a>
+                </li>
+                <!-- Navigation item(pills) fo events. -->
+                <li class="nav-item pill-2">
+                    <a class="nav-link" id="pills-events-tab" data-toggle="pill" href="#pills-events" role="tab"
+                       aria-controls="pills-events" aria-selected="false">Events</a>
+                </li>
+            </ul>
+        </nav>
+    <!-- Pill Video. -->
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
+            <div id="container" class="container">
+                <div class="dropDownbutton text-right">
+                    <button class="btn btn-info dropdown-toggle mx-3 mb-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sort Filters
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a id="sortDesc" class="btn-info dropdown-item" href="#">Relevance Descending</a>
+                        <a id="sortAsc" class="btn-info dropdown-item" href="#">Relevance Ascending</a>
+                        <a id="rankOrder" class="btn-info dropdown-item" href="#">Rank on View Count</a>
+                    </div>
+                </div>
+                <div id="card"> 
+                    <!-- One row to display picture and title of the video, word-cloud and circular progress bar. -->
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="pills-events" role="tabpanel" aria-labelledby="pills-events-tab">
+            <div id="container" class="container">
+                <div class="card-deck">
+                     <div class="row">
+                        <!--Events goes here -->
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="wordCloud"></div>
+    <div id="likeDislike" width="180" height="180"></div>
+    <div id="map"></div>
+    <div id="desc"></div>
+    <div id="likeCount"></div>
+    <div id="loadContent" width="100%" height="100%" class="loading-indicator"></div>
+</section>
+</div>
+
+<!-- Load the jsquery file, with this is possible to apply the changes using the style file. -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="js/libs/jquery-1.7.1.min.js"></script>
+<script src="js/libs/jQWCloudv3.1.js"></script>
+
+<!-- Importing the neccessary Java script -->
+<script src="js/libs/jquery.showLoading.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+<script src="js/feedback.js"></script>
+
+<!-- Footer of the page with icons for social media and -->
+<footer class="text-center mt-5" style="padding-top: 200px">
+    <a class="footer" href="https://www.facebook.com/"><img src="images/facebook.png" alt="facebbok icon"/></a>
+    <a class="footer" href="https://www.instagram.com/"><img src="images/instagram.png" alt="instagram icon"/></a>
+    <a class="footer" href="https://twitter.com/"><img src="images/twitter.png" alt="twitter icon"/></a>
+    <p class="title mt-2 pb-5">Copyright &copy; 2019 | AbracaData</p>
+</footer>
+   
+<script
+async
+defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFW4eo1rw_zJl5M4qyosI9q11FbBo7KSQ&callback=initMap"
+></script>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+</body>
+</html>

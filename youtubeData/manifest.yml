@@ -1,0 +1,6 @@
+---
+applications:
+ - name: youtubedata
+   routes:
+    - route: youtubedata.eu-gb.mybluemix.net
+   memory: 512M
